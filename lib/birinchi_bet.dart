@@ -52,54 +52,117 @@ class _BirinchibetState extends State<Birinchibet> {
                 style: TextStyle(fontSize: 30.0),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/sup.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Шорпо',
-                          style: TextStyle(fontSize: 20.0),
+            InkWell(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Center(child: Text('Шорпо')),
+                    content: Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.white,
                         ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав:Говядина, Картофель,Репчатый лук,Болгарский перец,Морковь, Помидор,Чеснок и Зелень',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        Row(
+                        margin:
+                            EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
+                        child: Column(
                           children: [
-                            GestureDetector(
-                              child: LikeKur(),
-                              onTap: () {
-                                like = true;
-                                liketar.add(like);
-                                setState(() {});
-                              },
+                            Padding(
+                              padding: EdgeInsets.all(12.0),
+                              child: Expanded(
+                                child: Image.asset(
+                                  'assets/images/sup.webp',
+                                  width: 400.0,
+                                ),
+                              ),
                             ),
-                            Text('Нравится: ${liketar.length}')
+                            Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width: 400.0,
+                                    child: Text(
+                                      'Состав: Говядина, Картофель,Репчатый лук,Болгарский перец,Морковь, Помидор,Чеснок и Зелень',
+                                      style: TextStyle(fontSize: 15.0),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
-                        )
-                      ],
+                        ),
+                      ),
                     ),
-                  )
-                ],
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text('Закрыть'))
+                    ],
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.white,
+                ),
+                margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Image.asset(
+                        'assets/images/sup.webp',
+                        width: 120.0,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Шорпо',
+                            style: TextStyle(fontSize: 20.0),
+                          ),
+                          Container(
+                            width: 170.0,
+                            child: Text(
+                              'Состав:Говядина, Картофель,Репчатый лук,Болгарский перец,Морковь, Помидор,Чеснок и Зелень',
+                              style: TextStyle(fontSize: 10.0),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              InkWell(
+                                child: LikeKur(),
+                                onTap: () {
+                                  like = true;
+                                  liketar.add(like);
+                                  setState(() {});
+                                },
+                              ),
+                              InkWell(
+                                child: LikeKur(),
+                                onTap: () {
+                                  like = false;
+                                  liketar.removeAt(0);
+                                  setState(() {});
+                                },
+                              ),
+                              Text('Нравится: ${liketar.length}')
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             Container(
