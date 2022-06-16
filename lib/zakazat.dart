@@ -21,7 +21,7 @@ class _ZakazatState extends State<Zakazat> {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 220, 214),
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.red),
+            iconTheme: IconThemeData(color: Colors.red),
             title: const Text(
               'Заказать',
               style: TextStyle(color: Colors.black),
@@ -497,6 +497,7 @@ class _ZakazatState extends State<Zakazat> {
             ),
           ],
         ),
+         floatingActionButton: FloatingActionButton.extended(onPressed:() {}, label: Text('Заказать'),),
         drawer: Drawer(
           child: SingleChildScrollView(
             child: Container(
@@ -523,8 +524,10 @@ class _ZakazatState extends State<Zakazat> {
       child: Column(
         children: [
           InkWell(
-            onTap: () {Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => Birinchibet())));},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => Birinchibet())));
+            },
             child: Padding(
               padding: EdgeInsets.all(15.0),
               child: Row(
@@ -542,8 +545,10 @@ class _ZakazatState extends State<Zakazat> {
             ),
           ),
           InkWell(
-            onTap: () { Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => Ekinchibet())));},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => Ekinchibet())));
+            },
             child: Padding(
               padding: EdgeInsets.all(15.0),
               child: Row(
@@ -561,8 +566,10 @@ class _ZakazatState extends State<Zakazat> {
             ),
           ),
           InkWell(
-            onTap: () { Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => Zakazat())));},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => Zakazat())));
+            },
             child: Padding(
               padding: EdgeInsets.all(15.0),
               child: Row(
@@ -580,8 +587,10 @@ class _ZakazatState extends State<Zakazat> {
             ),
           ),
           InkWell(
-            onTap: () { Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => Aboutme())));},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => Aboutme())));
+            },
             child: Padding(
               padding: EdgeInsets.all(15.0),
               child: Row(
@@ -590,10 +599,11 @@ class _ZakazatState extends State<Zakazat> {
                     child: Icon(Icons.person),
                   ),
                   Expanded(
-                      child: Text(
-                    'Профиль',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
+                    child: Text(
+                      'Профиль',
+                      style: TextStyle(color: Colors.black, fontSize: 16.0),
+                    ),
+                  )
                 ],
               ),
             ),

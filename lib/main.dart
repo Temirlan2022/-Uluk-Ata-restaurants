@@ -8,15 +8,16 @@ import 'test.dart';
 
 void main() => runApp(
       MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(),
-          initialRoute: 'kattaluu',
-          routes: {
-            'Glavnyibet': (context) => Glavnyibet(),
-            'Birinchibet': (context) => Birinchibet(),
-            'Ekinchibet': (context) => Ekinchibet(),
-            'Aboutme': (context) => Aboutme(),
-            'kattaluu': (context) => kattaluu(),
-            'Str2': (context) => Str2()
-          }),
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(),
+        initialRoute: 'kattaluu',
+        routes: {
+          'Glavnyibet': (context) => Glavnyibet(),
+          'Birinchibet': (context) => Birinchibet(),
+          'Ekinchibet': (context) => Ekinchibet(),
+          'Aboutme': (context) => Aboutme(),
+          'kattaluu': (context) => kattaluu(),
+          'Str2': (context) => Str2(),
+        },
+      ),
     );
