@@ -3,9 +3,11 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:proect_2/about_me.dart';
 import 'package:proect_2/birinchi_bet.dart';
-import 'package:proect_2/menin_drawer_menum.dart';
+import 'package:proect_2/drawerList/menin_drawer_menum.dart';
 import 'package:proect_2/zakazat.dart';
 import 'package:url_launcher/link.dart';
+
+import 'drawerList/drawerList_widget.dart';
 
 class Ekinchibet extends StatefulWidget {
   const Ekinchibet({Key key}) : super(key: key);
@@ -75,7 +77,7 @@ class _EkinchibetState extends State<Ekinchibet> {
                               style: TextStyle(fontSize: 15.0),
                             ),
                           ),
-                           Link(
+                          Link(
                             target: LinkTarget.blank,
                             uri: Uri.parse('https://go.2gis.com/obzawn'),
                             builder: (context, followLink) => TextButton(
@@ -108,100 +110,7 @@ class _EkinchibetState extends State<Ekinchibet> {
     return Container(
       padding: EdgeInsets.only(top: 15.0),
       child: Column(
-        children: [menuItem()],
-      ),
-    );
-  }
-
-  Widget menuItem() {
-    return Material(
-      child: Column(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Birinchibet())));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Icon(Icons.menu_book),
-                  ),
-                  Expanded(
-                      child: Text(
-                    'Меню',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Ekinchibet())));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Icon(Icons.location_city),
-                  ),
-                  Expanded(
-                      child: Text(
-                    'Наш адрес',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Zakazat())));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Icon(Icons.car_repair),
-                  ),
-                  Expanded(
-                      child: Text(
-                    'Доставка',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Aboutme())));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Icon(Icons.person),
-                  ),
-                  Expanded(
-                      child: Text(
-                    'Профиль',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
-                ],
-              ),
-            ),
-          ),
-        ],
+        children: [MenuIten()],
       ),
     );
   }

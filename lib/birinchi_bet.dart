@@ -3,8 +3,12 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:proect_2/about_me.dart';
 import 'package:proect_2/ekinchi_bet.dart';
-import 'package:proect_2/menin_drawer_menum.dart';
+import 'package:proect_2/drawerList/menin_drawer_menum.dart';
+import 'package:proect_2/widgets/MenuWidget.dart';
+import 'package:proect_2/widgets/widget-food_menu.dart';
 import 'package:proect_2/zakazat.dart';
+
+import 'drawerList/drawerList_widget.dart';
 
 class Birinchibet extends StatefulWidget {
   const Birinchibet({Key key}) : super(key: key);
@@ -14,20 +18,6 @@ class Birinchibet extends StatefulWidget {
 }
 
 class _BirinchibetState extends State<Birinchibet> {
-  bool like = false;
-  List<bool> liketar = <bool>[];
-  Widget LikeKur() {
-    if (like == true) {
-      return const Icon(
-        Icons.favorite,
-        size: 20.0,
-        color: Colors.red,
-      );
-    } else {
-      return const Icon(Icons.favorite_border, size: 20.0);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,539 +42,406 @@ class _BirinchibetState extends State<Birinchibet> {
                 style: TextStyle(fontSize: 30.0),
               ),
             ),
+            //Шорпонун болугу башталды
             InkWell(
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: Center(child: Text('Шорпо')),
-                    content: Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.white,
-                        ),
-                        margin:
-                            EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(12.0),
-                              child: Expanded(
-                                child: Image.asset(
-                                  'assets/images/sup.webp',
-                                  width: 400.0,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    width: 400.0,
-                                    child: Text(
-                                      'Состав: Говядина, Картофель,Репчатый лук,Болгарский перец,Морковь, Помидор,Чеснок и Зелень',
-                                      style: TextStyle(fontSize: 15.0),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Center(child: Text('Шорпо')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/sup.webp',
+                          sostav:
+                              'Состав: Говядина, Картофель,Репчатый лук,Болгарский перец,Морковь, Помидор,Чеснок и Зелень',
                         ),
                       ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Закрыть'))
+                      ],
                     ),
-                    actions: [
-                      TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text('Закрыть'))
-                    ],
-                  ),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.white,
-                ),
-                margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(12.0),
-                      child: Image.asset(
-                        'assets/images/sup.webp',
-                        width: 120.0,
+                  );
+                },
+                //шорпонун главный карточкасы
+                child: MenuWidget(
+                    images: 'assets/images/sup.webp',
+                    sostavv:
+                        'Состав:Говядина, Картофель,Репчатый лук,Болгарский перец,Морковь, Помидор,Чеснок и Зелень',
+                    tamakAty: 'Шорпо')),
+            //Шорпонун карточкасы бутту
+
+            //Лагман болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Center(child: Text('Лагман')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/lagman.webp',
+                          sostav:
+                              'Состав:говядина, картофель, перец болгарский, лук репчатый, помидоры,морковь,чеснок и зелень',
+                        ),
                       ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Закрыть'))
+                      ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Column(
-                        children: [
-                          Text(
-                            'Шорпо',
-                            style: TextStyle(fontSize: 20.0),
-                          ),
-                          Container(
-                            width: 170.0,
-                            child: Text(
-                              'Состав:Говядина, Картофель,Репчатый лук,Болгарский перец,Морковь, Помидор,Чеснок и Зелень',
-                              style: TextStyle(fontSize: 10.0),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              InkWell(
-                                child: LikeKur(),
-                                onTap: () {
-                                  like = true;
-                                  liketar.add(like);
-                                  setState(() {});
-                                },
-                              ),
-                              InkWell(
-                                child: LikeKur(),
-                                onTap: () {
-                                  like = false;
-                                  liketar.removeAt(0);
-                                  setState(() {});
-                                },
-                              ),
-                              Text('Нравится: ${liketar.length}')
-                            ],
-                          )
-                        ],
+                  );
+                },
+                //Лагман главный карточкасы
+                child: MenuWidget(
+                  images: 'assets/images/lagman.webp',
+                  sostavv:
+                      'Состав:говядина, картофель, перец болгарский, лук репчатый, помидоры,морковь,чеснок и зелень',
+                  tamakAty: 'Лагман',
+                )),
+            //Лагман карточкасы бутту
+
+            //Гуляш болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Center(child: Text('Гуляш')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/gulash.webp',
+                          sostav:
+                              'Состав: Говядина, Картофель, Репчатый лук,Болгарский перец, Морковь, Помидор, Чеснок и Зелень',
+                        ),
                       ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/lagman.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Лагман',
-                          style: TextStyle(fontSize: 20.0),
-                        ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав:говядина, картофель, перец болгарский, лук репчатый, помидоры,морковь,чеснок и зелень',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Закрыть'))
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/gulash.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Гуляш',
-                          style: TextStyle(fontSize: 20.0),
+                  );
+                },
+                //Гуляш главный карточкасы
+                child: MenuWidget(
+                    images: 'assets/images/gulash.webp',
+                    sostavv:
+                        'Состав: Говядина, Картофель, Репчатый лук,Болгарский перец, Морковь, Помидор, Чеснок и Зелень',
+                    tamakAty: 'Гуляш')),
+            //Гуляш карточкасы бутту
+
+            //Шорпонун болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Center(child: Text('Голубцы')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/golubsy.jpg',
+                          sostav:
+                              'Состав:Говядина, Картофель, Репчатый лук,Болгарский перец, Морковь, Помидор, Чеснок и Зелень',
                         ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав: Говядина, Картофель, Репчатый лук,Болгарский перец, Морковь, Помидор, Чеснок и Зелень',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Закрыть'))
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/golubsy.jpg',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 10.0, top: 10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Голубцы',
-                          style: TextStyle(fontSize: 20.0),
-                        ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав:Говядина, Картофель, Репчатый лук,Болгарский перец, Морковь, Помидор, Чеснок и Зелень',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
+                  );
+                },
+                //Голубцы главный карточкасы
+                child: MenuWidget(
+                    images: 'assets/images/golubsy.jpg',
+                    sostavv:
+                        'Состав:Говядина, Картофель, Репчатый лук,Болгарский перец, Морковь, Помидор, Чеснок и Зелень',
+                    tamakAty: 'Голубцы')),
+            //Голубцы карточкасы бутту
+
             Padding(
               padding: EdgeInsets.only(left: 50.0, top: 10.0),
               child: Text('2-тамактар', style: TextStyle(fontSize: 30.0)),
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/plov.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Аш Ташкентский',
-                          style: TextStyle(fontSize: 20.0),
+
+            //Аш Ташкентский болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Center(child: Text('Плов Ташкентский')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/plov.webp',
+                          sostav:
+                              'Состав: баранина, нут, куруч, морковь, Лук репчатый, Чеснок, Изюм, перец острый,',
                         ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав: баранина, нут, куруч, морковь, Лук репчатый, Чеснок, Изюм, перец острый,',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Закрыть'))
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/achuu_et.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Ачуу эт',
-                          style: TextStyle(fontSize: 20.0),
+                  );
+                },
+                //Аш Ташкентский главный карточкасы
+                child: MenuWidget(
+                    images: 'assets/images/plov.webp',
+                    sostavv:
+                        'Состав: баранина, нут, куруч, морковь, Лук репчатый, Чеснок, Изюм, перец острый,',
+                    tamakAty: 'Плов Ташкентский')),
+            //Аш Ташкентский карточкасы бутту
+
+            //Острое мясо болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Center(child: Text('Острое мясо')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/achuu_et.webp',
+                          sostav:
+                              'Состав:говядина, помидоры, перец болгарский, лук репчатый, чеснок, петрушки, укропа, аджика, уцхо, хмели-сунели, кинзы, кориандр и лавровый лист',
                         ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав:говядина, помидоры, перец болгарский, лук репчатый, чеснок, петрушки, укропа, аджика, уцхо, хмели-сунели, кинзы, кориандр и лавровый лист',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Закрыть'))
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/kuurdak.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Куурдак',
-                          style: TextStyle(fontSize: 20.0),
+                  );
+                },
+                //Острое мясо главный карточкасы
+                child: MenuWidget(
+                    images: 'assets/images/achuu_et.webp',
+                    sostavv:
+                        'Состав:говядина, помидоры, перец болгарский, лук репчатый, чеснок, петрушки, укропа, аджика, уцхо, хмели-сунели, кинзы, кориандр и лавровый лист',
+                    tamakAty: 'Острое мясо')),
+            //Острое мясо карточкасы бутту
+
+            //Баранина болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Center(child: Text('Баранина')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/kuurdak.webp',
+                          sostav:
+                              'Состав:Баранина, Лук репчатый, Картофель, Чеснок, паприка, базилик, кинзы Перец острый',
                         ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав:Баранина, Лук репчатый, Картофель, Чеснок, паприка, базилик, кинзы Перец острый,',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Закрыть'))
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/manty.jpg',
-                      width: 120.0,
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 15.0),
-                    child: Column(
-                      children: [
-                        Container(
-                          child: Text(
-                            'Манты',
-                            style: TextStyle(fontSize: 20.0),
-                          ),
+                  );
+                },
+                //Баранина главный карточкасы
+                child: MenuWidget(
+                    images: 'assets/images/kuurdak.webp',
+                    sostavv:
+                        'Состав:Баранина, Лук репчатый, Картофель, Чеснок, паприка, базилик, кинзы Перец острый',
+                    tamakAty: 'Баранина')),
+            //Баранина карточкасы бутту
+
+            //Манты болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Center(child: Text('Манты')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/manty.jpg',
+                          sostav: 'Состав:Говядина, Картофель, Чеснок и Зелень',
                         ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав:Говядина, Картофель, Чеснок и Зелень',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Закрыть'))
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-            Padding(
+                  );
+                },
+                //Манты главный карточкасы
+                child: const MenuWidget(
+                    images: 'assets/images/manty.jpg',
+                    sostavv: 'Состав:Говядина, Картофель, Чеснок и Зелень',
+                    tamakAty: 'Манты')),
+            //Манты карточкасы бутту
+
+            const Padding(
               padding: EdgeInsets.only(left: 50.0, top: 10.0),
               child: Text('Суусундуктар', style: TextStyle(fontSize: 30.0)),
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/cofee.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Кофе',
-                          style: TextStyle(fontSize: 20.0),
+
+            //Кофе болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Center(child: Text('Кофе')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/cofee.webp',
+                          sostav:
+                              'Состав: молоко, кофе растворимый, сахар, вода, лед, шоколад, корица молотая',
                         ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав: молоко, кофе растворимый, сахар, вода, лед, шоколад, корица молотая',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/chai.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 15.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Чай',
-                          style: TextStyle(fontSize: 20.0),
-                        ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав:чай, мята свежая, имбирь, лимон, апельсин, мёд, ягоды',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/cola.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Container(
-                      margin: EdgeInsets.only(left: 30.0),
-                      child: Column(
-                        children: [
-                          Text(
-                            'Кока-Кола',
-                            style: TextStyle(fontSize: 20.0),
-                          ),
-                          Text(
-                            '1 литр - 70 сом',
-                            style: TextStyle(fontSize: 10.0),
-                          ),
-                          Text(
-                            '1,5 литр - 90 сом',
-                            style: TextStyle(fontSize: 10.0),
-                          ),
-                        ],
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Image.asset(
-                      'assets/images/apelsin_sok.webp',
-                      width: 120.0,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Апельсиновый сок',
-                          style: TextStyle(fontSize: 18.0),
-                        ),
-                        Container(
-                          width: 170.0,
-                          child: Text(
-                            'Состав: персик, нектарин, апельсин',
-                            style: TextStyle(fontSize: 10.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Закрыть'))
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
+                  );
+                },
+                //Кофе главный карточкасы
+                child: const MenuWidget(
+                    images: 'assets/images/cofee.webp',
+                    sostavv:
+                        'Состав: молоко, кофе растворимый, сахар, вода, лед, шоколад, корица молотая',
+                    tamakAty: 'Кофе')),
+            //Кофе карточкасы бутту
+
+            //Чай болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Center(child: Text('Чай')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/chai.webp',
+                          sostav:
+                              'Состав:чай, мята свежая, имбирь, лимон, апельсин, мёд, ягоды',
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Закрыть'))
+                      ],
+                    ),
+                  );
+                },
+                //Чай главный карточкасы
+                child: const MenuWidget(
+                    images: 'assets/images/chai.webp',
+                    sostavv:
+                        'Состав:чай, мята свежая, имбирь, лимон, апельсин, мёд, ягоды',
+                    tamakAty: 'Чай')),
+            //Чай карточкасы бутту
+
+            //Кока-Кола болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Center(child: Text('Кока-Кола')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/cola.webp',
+                          sostav: '1 литр - 70 сом',
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Закрыть'))
+                      ],
+                    ),
+                  );
+                },
+                //Кока-Кола главный карточкасы
+                child: const MenuWidget(
+                  images: 'assets/images/cola.webp',
+                  sostavv: '1 литр - 70 сом',
+                  tamakAty: 'Кока-Кола',
+                )),
+            //Кока-Кола карточкасы бутту
+            //Апельсиновый сок болугу башталды
+            InkWell(
+                onTap: () {
+                  //диалоговое окно башталды
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Center(child: Text('Апельсиновый сок')),
+                      content: Expanded(
+                        child: FoodMenu(
+                          image: 'assets/images/apelsin_sok.webp',
+                          sostav: 'Состав: персик, нектарин, апельсин',
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Закрыть'))
+                      ],
+                    ),
+                  );
+                },
+                //Апельсиновый сок главный карточкасы
+                child: const MenuWidget(
+                    images: 'assets/images/apelsin_sok.webp',
+                    sostavv: 'Состав: персик, нектарин, апельсин',
+                    tamakAty: 'Апельсиновый сок')),
+            //Апельсиновый сок карточкасы бутту
           ],
         ),
         drawer: Drawer(
@@ -603,100 +460,7 @@ class _BirinchibetState extends State<Birinchibet> {
     return Container(
       padding: EdgeInsets.only(top: 15.0),
       child: Column(
-        children: [menuItem()],
-      ),
-    );
-  }
-
-  Widget menuItem() {
-    return Material(
-      child: Column(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Birinchibet())));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Icon(Icons.menu_book),
-                  ),
-                  Expanded(
-                      child: Text(
-                    'Меню',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Ekinchibet())));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Icon(Icons.location_city),
-                  ),
-                  Expanded(
-                      child: Text(
-                    'Наш адрес',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Zakazat())));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Icon(Icons.car_repair),
-                  ),
-                  Expanded(
-                      child: Text(
-                    'Доставка',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Aboutme())));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Icon(Icons.person),
-                  ),
-                  Expanded(
-                      child: Text(
-                    'Профиль',
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
-                  ))
-                ],
-              ),
-            ),
-          ),
-        ],
+        children: [MenuIten()],
       ),
     );
   }
