@@ -192,7 +192,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         child: FoodMenu(
                           image: 'assets/images/plov.webp',
                           sostav:
-                              'Состав: баранина, нут, куруч, морковь, Лук репчатый, Чеснок, Изюм, перец острый,',
+                              'Состав: баранина, нут, куруч, морковь, Лук репчатый, Чеснок, Изюм, перец острый'
                         ),
                       ),
                       actions: [
