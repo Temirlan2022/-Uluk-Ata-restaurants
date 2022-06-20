@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class MenuWidget extends StatefulWidget {
-  const MenuWidget({Key key, this.tamakAty, this.images, this.sostavv}) : super(key: key);
+  const MenuWidget(
+      {Key key, this.tamakAty, this.images, this.sostavv, this.tamakAtySize})
+      : super(key: key);
   final String sostavv;
   final String images;
   final String tamakAty;
+  final double tamakAtySize;
 
   @override
   State<MenuWidget> createState() => MenuWidgetState();
@@ -39,7 +42,7 @@ class MenuWidgetState extends State<MenuWidget> {
               children: [
                 Text(
                   widget.tamakAty,
-                  style: TextStyle(fontSize: 20.0),
+                  style: TextStyle(fontSize:18.0),
                 ),
                 Container(
                   width: 170.0,

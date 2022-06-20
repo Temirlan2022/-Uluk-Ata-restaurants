@@ -441,8 +441,9 @@ class _ZakazatState extends State<Zakazat> {
                 child: const MenuWidget(
                     images: 'assets/images/apelsin_sok.webp',
                     sostavv: 'Состав: персик, нектарин, апельсин',
-                    tamakAty: 'Апельсиновый сок')),
+                    tamakAty: 'Апельсиновый сок'),),
             //Апельсиновый сок карточкасы бутту
+            SizedBox(height: 80.0)
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
