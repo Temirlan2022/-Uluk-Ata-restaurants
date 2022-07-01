@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:proect_2/about_me.dart';
-import 'package:proect_2/birinchi_bet.dart';
-import 'package:proect_2/ekinchi_bet.dart';
 import 'package:proect_2/drawerList/menin_drawer_menum.dart';
 import 'package:proect_2/widgets/MenuWidget.dart';
 import 'package:proect_2/widgets/widget-food_menu.dart';
-
+import 'package:proect_2/widgets/widget_zakryt.dart';
 import 'drawerList/drawerList_widget.dart';
 
 class Zakazat extends StatefulWidget {
@@ -25,7 +20,7 @@ class _ZakazatState extends State<Zakazat> {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 220, 214),
         appBar: AppBar(
-            iconTheme: IconThemeData(color: Colors.red),
+            iconTheme: const IconThemeData(color: Colors.red),
             title: const Text(
               'Заказать',
               style: TextStyle(color: Colors.black),
@@ -59,17 +54,13 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
                 },
                 //шорпонун главный карточкасы
-                child: MenuWidget(
+                child: const MenuWidget(
                     images: 'assets/images/sup.webp',
                     sostavv:
                         'Состав:Говядина, Картофель,Репчатый лук,Болгарский перец,Морковь, Помидор,Чеснок и Зелень',
@@ -83,7 +74,7 @@ class _ZakazatState extends State<Zakazat> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Center(child: Text('Лагман')),
+                      title: const Center(child: Text('Лагман')),
                       content: Expanded(
                         child: FoodMenu(
                           image: 'assets/images/lagman.webp',
@@ -92,17 +83,13 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
                 },
                 //Лагман главный карточкасы
-                child: MenuWidget(
+                child: const MenuWidget(
                   images: 'assets/images/lagman.webp',
                   sostavv:
                       'Состав:говядина, картофель, перец болгарский, лук репчатый, помидоры,морковь,чеснок и зелень',
@@ -117,7 +104,7 @@ class _ZakazatState extends State<Zakazat> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Center(child: Text('Гуляш')),
+                      title: const Center(child: Text('Гуляш')),
                       content: Expanded(
                         child: FoodMenu(
                           image: 'assets/images/gulash.webp',
@@ -126,17 +113,13 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
                 },
                 //Гуляш главный карточкасы
-                child: MenuWidget(
+                child: const MenuWidget(
                     images: 'assets/images/gulash.webp',
                     sostavv:
                         'Состав: Говядина, Картофель, Репчатый лук,Болгарский перец, Морковь, Помидор, Чеснок и Зелень',
@@ -150,7 +133,7 @@ class _ZakazatState extends State<Zakazat> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Center(child: Text('Голубцы')),
+                      title: const Center(child: Text('Голубцы')),
                       content: Expanded(
                         child: FoodMenu(
                           image: 'assets/images/golubsy.jpg',
@@ -159,24 +142,20 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                        widget_zakryt()
                       ],
                     ),
                   );
                 },
                 //Голубцы главный карточкасы
-                child: MenuWidget(
+                child: const MenuWidget(
                     images: 'assets/images/golubsy.jpg',
                     sostavv:
                         'Состав:Говядина, Картофель, Репчатый лук,Болгарский перец, Морковь, Помидор, Чеснок и Зелень',
                     tamakAty: 'Голубцы')),
             //Голубцы карточкасы бутту
 
-            Padding(
+           const Padding(
               padding: EdgeInsets.only(left: 50.0, top: 10.0),
               child: Text('2-тамактар', style: TextStyle(fontSize: 30.0)),
             ),
@@ -188,7 +167,7 @@ class _ZakazatState extends State<Zakazat> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Center(child: Text('Плов Ташкентский')),
+                      title: const Center(child: Text('Плов Ташкентский')),
                       content: Expanded(
                         child: FoodMenu(
                           image: 'assets/images/plov.webp',
@@ -197,17 +176,13 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                      widget_zakryt()
                       ],
                     ),
                   );
                 },
                 //Аш Ташкентский главный карточкасы
-                child: MenuWidget(
+                child: const MenuWidget(
                     images: 'assets/images/plov.webp',
                     sostavv:
                         'Состав: баранина, нут, куруч, морковь, Лук репчатый, Чеснок, Изюм, перец острый,',
@@ -221,7 +196,7 @@ class _ZakazatState extends State<Zakazat> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Center(child: Text('Острое мясо')),
+                      title: const Center(child: Text('Острое мясо')),
                       content: Expanded(
                         child: FoodMenu(
                           image: 'assets/images/achuu_et.webp',
@@ -230,17 +205,13 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
                 },
                 //Острое мясо главный карточкасы
-                child: MenuWidget(
+                child: const MenuWidget(
                     images: 'assets/images/achuu_et.webp',
                     sostavv:
                         'Состав:говядина, помидоры, перец болгарский, лук репчатый, чеснок, петрушки, укропа, аджика, уцхо, хмели-сунели, кинзы, кориандр и лавровый лист',
@@ -254,7 +225,7 @@ class _ZakazatState extends State<Zakazat> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Center(child: Text('Баранина')),
+                      title: const Center(child: Text('Баранина')),
                       content: Expanded(
                         child: FoodMenu(
                           image: 'assets/images/kuurdak.webp',
@@ -263,17 +234,13 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
                 },
                 //Баранина главный карточкасы
-                child: MenuWidget(
+                child: const MenuWidget(
                     images: 'assets/images/kuurdak.webp',
                     sostavv:
                         'Состав:Баранина, Лук репчатый, Картофель, Чеснок, паприка, базилик, кинзы Перец острый',
@@ -295,11 +262,7 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
@@ -332,11 +295,7 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                      widget_zakryt()
                       ],
                     ),
                   );
@@ -365,11 +324,7 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                        widget_zakryt()
                       ],
                     ),
                   );
@@ -397,11 +352,7 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
@@ -428,11 +379,7 @@ class _ZakazatState extends State<Zakazat> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
@@ -443,12 +390,12 @@ class _ZakazatState extends State<Zakazat> {
                     sostavv: 'Состав: персик, нектарин, апельсин',
                     tamakAty: 'Апельсиновый сок'),),
             //Апельсиновый сок карточкасы бутту
-            SizedBox(height: 80.0)
+           const SizedBox(height: 80.0)
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {},
-          label: Text('Заказать'),
+          label: const Text('Заказать'),
         ),
         drawer: Drawer(
           child: SingleChildScrollView(

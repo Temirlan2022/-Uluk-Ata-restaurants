@@ -12,7 +12,7 @@ class FoodMenu extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
         color: Colors.white,
       ),
-      margin: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
+      margin: const EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
       child: Column(
         children: [
           Padding(
@@ -32,7 +32,7 @@ class FoodMenu extends StatelessWidget {
                   width: 400.0,
                   child: Text(
                     sostav,
-                    style: TextStyle(fontSize: 15.0),
+                    style: const TextStyle(fontSize: 15.0),
                     textAlign: TextAlign.center,
                   ),
                 ),

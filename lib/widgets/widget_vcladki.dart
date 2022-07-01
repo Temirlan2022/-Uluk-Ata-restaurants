@@ -9,8 +9,8 @@ class vcladkiWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      margin: EdgeInsets.only(top: 20.0),
-      padding: EdgeInsets.all(10.0),
+      margin: const EdgeInsets.only(top: 20.0),
+      padding: const EdgeInsets.all(10.0),
       height: 125.0,
       width: 125.0,
       child: Column(
