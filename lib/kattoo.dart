@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'test.dart';
 import 'glavnyi_bet.dart';
 
 class kattaluu extends StatefulWidget {
@@ -10,7 +9,6 @@ class kattaluu extends StatefulWidget {
 }
 
 class _kattaluuState extends State<kattaluu> {
-  String _aty = '';
 
   @override
   Widget build(BuildContext context) {

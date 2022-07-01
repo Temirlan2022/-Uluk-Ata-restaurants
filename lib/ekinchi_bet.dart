@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proect_2/drawerList/menin_drawer_menum.dart';
 import 'package:proect_2/widgets/container_adres_widget.dart';
-import 'package:url_launcher/link.dart';
 import 'drawerList/drawerList_widget.dart';
 
 class Ekinchibet extends StatefulWidget {

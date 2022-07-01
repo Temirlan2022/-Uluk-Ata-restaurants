@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proect_2/drawerList/menin_drawer_menum.dart';
 import 'package:proect_2/widgets/MenuWidget.dart';
 import 'package:proect_2/widgets/widget-food_menu.dart';
+import 'package:proect_2/widgets/widget_zakryt.dart';
 import 'drawerList/drawerList_widget.dart';
 
 class Birinchibet extends StatefulWidget {
@@ -52,11 +53,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
@@ -85,11 +82,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                        widget_zakryt()
                       ],
                     ),
                   );
@@ -119,11 +112,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
@@ -152,11 +141,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
@@ -190,11 +175,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                        widget_zakryt()
                       ],
                     ),
                   );
@@ -223,11 +204,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                        widget_zakryt()
                       ],
                     ),
                   );
@@ -256,11 +233,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
@@ -288,11 +261,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                      widget_zakryt()
                       ],
                     ),
                   );
@@ -325,11 +294,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                        widget_zakryt()
                       ],
                     ),
                   );
@@ -358,11 +323,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                      widget_zakryt()
                       ],
                     ),
                   );
@@ -390,11 +351,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                       widget_zakryt()
                       ],
                     ),
                   );
@@ -421,11 +378,7 @@ class _BirinchibetState extends State<Birinchibet> {
                         ),
                       ),
                       actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Закрыть'))
+                      widget_zakryt()
                       ],
                     ),
                   );

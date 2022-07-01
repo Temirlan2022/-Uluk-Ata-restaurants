@@ -41,7 +41,7 @@ class _GlavnyibetState extends State<Glavnyibet> {
         backgroundColor: Color.fromARGB(255, 255, 220, 214),
         appBar: AppBar(
             iconTheme: IconThemeData(color: Colors.red),
-            title: Text(
+            title: const Text(
               '"Улук Ата" кафеси',
               style: TextStyle(color: Colors.black),
             ),
