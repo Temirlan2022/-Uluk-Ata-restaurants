@@ -1,11 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:proect_2/ekinchi_bet.dart';
 import 'package:proect_2/drawerList/menin_drawer_menum.dart';
-import 'package:proect_2/zakazat.dart';
-import 'birinchi_bet.dart';
+import 'package:proect_2/widgets/name_number_widget.dart';
 import 'drawerList/drawerList_widget.dart';
 
 class Aboutme extends StatefulWidget {
@@ -23,42 +20,22 @@ class _AboutmeState extends State<Aboutme> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 255, 220, 214),
+          backgroundColor: const Color.fromARGB(255, 255, 220, 214),
           appBar: AppBar(
-            iconTheme: IconThemeData(color: Colors.red),
+            iconTheme: const IconThemeData(color: Colors.red),
             elevation: 0.0,
-            backgroundColor: Color.fromARGB(255, 255, 220, 214),
+            backgroundColor: const Color.fromARGB(255, 255, 220, 214),
           ),
           body: Column(
             children: <Widget>[
               imageProfile(),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Container(
-                    color: Colors.white,
-                    width: double.infinity,
-                    height: 50.0,
-                    child: Center(
-                        child: Text(
-                      'Аданбаев Темирлан',
-                      style: TextStyle(fontSize: 25.0),
-                    ))),
+              name_number_widget(name_text: 'Аданбаев Темирлан'),
+              name_number_widget(
+                name_text: "0559070590", numberSize: 20.0,
               ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Container(
-                    width: double.infinity,
-                    height: 50.0,
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      '0559070590',
-                      style: TextStyle(fontSize: 20.0),
-                    ))),
-              )
             ],
           ),
           drawer: Drawer(
@@ -79,7 +56,7 @@ class _AboutmeState extends State<Aboutme> {
           CircleAvatar(
               radius: 80.0,
               backgroundImage: _imageFile == null
-                  ? AssetImage('assets/images/person_icon.webp')
+                  ? const AssetImage('assets/images/person_icon.webp')
                   : FileImage(File(_imageFile.path))),
           Positioned(
             bottom: 20.0,
@@ -91,7 +68,7 @@ class _AboutmeState extends State<Aboutme> {
                   builder: ((builder) => bottomSheet()),
                 );
               },
-              child: Icon(
+              child: const Icon(
                 Icons.camera_alt,
                 color: Colors.teal,
                 size: 28.0,
@@ -107,14 +84,14 @@ class _AboutmeState extends State<Aboutme> {
     return Container(
       height: 100.0,
       width: MediaQuery.of(context).size.width,
-      margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+      margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
       child: Column(
         children: <Widget>[
-          Text(
+          const Text(
             'Сурот коюу',
             style: TextStyle(fontSize: 20.0),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           Row(
@@ -124,15 +101,15 @@ class _AboutmeState extends State<Aboutme> {
                 onPressed: () {
                   takePhoto(ImageSource.camera);
                 },
-                icon: Icon(Icons.camera),
-                label: Text('Камера'),
+                icon: const Icon(Icons.camera),
+                label: const Text('Камера'),
               ),
               FlatButton.icon(
                 onPressed: () {
                   takePhoto(ImageSource.gallery);
                 },
-                icon: Icon(Icons.image),
-                label: Text('Галерея'),
+                icon: const Icon(Icons.image),
+                label: const Text('Галерея'),
               ),
             ],
           ),
@@ -150,7 +127,7 @@ class _AboutmeState extends State<Aboutme> {
 
   Widget MyDrawerList() {
     return Container(
-      padding: EdgeInsets.only(top: 15.0),
+      padding: const EdgeInsets.only(top: 15.0),
       child: Column(
         children: [MenuIten()],
       ),

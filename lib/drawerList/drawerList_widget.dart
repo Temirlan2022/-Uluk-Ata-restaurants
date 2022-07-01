@@ -25,7 +25,7 @@ class _MenuItenState extends State<MenuIten> {
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Row(
-                children: [
+                children: const [
                   Expanded(
                     child: Icon(Icons.menu_book),
                   ),
@@ -46,7 +46,7 @@ class _MenuItenState extends State<MenuIten> {
             child: Padding(
               padding: EdgeInsets.all(15.0),
               child: Row(
-                children: [
+                children: const [
                   Expanded(
                     child: Icon(Icons.location_city),
                   ),
@@ -67,7 +67,7 @@ class _MenuItenState extends State<MenuIten> {
             child: Padding(
               padding: EdgeInsets.all(15.0),
               child: Row(
-                children: [
+                children: const [
                   Expanded(
                     child: Icon(Icons.car_repair),
                   ),
@@ -88,7 +88,7 @@ class _MenuItenState extends State<MenuIten> {
             child: Padding(
               padding: EdgeInsets.all(15.0),
               child: Row(
-                children: [
+                children: const [
                   Expanded(
                     child: Icon(Icons.person),
                   ),

@@ -13,24 +13,24 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
       color:  Color.fromARGB(255, 255, 220, 214),
       width: double.infinity,
       height: 200.0,
-      padding: EdgeInsets.only(top: 20.0),
+      padding: const EdgeInsets.only(top: 20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: 10.0),
+            margin: const EdgeInsets.only(bottom: 10.0),
             height: 70.0,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
                   image: AssetImage('assets/images/person_icon.webp')),
             ),
           ),
-          Text(
+          const Text(
             'Аданбаев Темирлан',
             style: TextStyle(color: Colors.white, fontSize: 20.0),
           ),
-          Text(
+          const Text(
             '0559070590',
             style: TextStyle(color: Colors.grey, fontSize: 14.0),
           )

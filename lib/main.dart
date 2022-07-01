@@ -9,7 +9,7 @@ import 'test.dart';
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(),
+        theme: ThemeData.dark(),
         initialRoute: 'kattaluu',
         routes: {
           'Glavnyibet': (context) => Glavnyibet(),
